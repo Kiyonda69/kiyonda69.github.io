@@ -1,0 +1,20 @@
+:root{--bg:#EEEEEE;--panel:#FFFFFF;--text:#111111;--sub:#555555;--border:#D0D0D0;--link:#0861AC}
+@media (prefers-color-scheme:dark){:root{--bg:#1E1F23;--panel:#292B31;--text:#F5F5F5;--sub:#B0B4BA;--border:#3A3D44;--link:#4DB2E6}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;line-height:1.75;font-size:16px}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+header.site{max-width:760px;margin:0 auto;padding:16px 16px 0;font-size:14px;color:var(--sub)}
+header.site a{color:var(--sub);text-decoration:none}
+section.panel{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:20px 20px 12px;margin:0 0 16px}
+h1{font-size:22px;margin:8px 0 16px}
+h3{font-size:16px;margin:16px 0 4px}
+h2{font-size:17px;margin:20px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+p,li{margin:0 0 8px}
+ul{padding-left:1.4em}
+a{color:var(--link)}
+.meta{color:var(--sub);font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{width:32%;font-weight:600;background:transparent}
+footer{max-width:760px;margin:0 auto;padding:0 16px 32px;font-size:13px;color:var(--sub)}
+@media (max-width:520px){th,td{display:block;width:100%;border-top:none}tr{display:block;border-top:1px solid var(--border)}table{border-bottom:none}}
