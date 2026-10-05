@@ -18,3 +18,5 @@ th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-a
 th{width:32%;font-weight:600;background:transparent}
 footer{max-width:760px;margin:0 auto;padding:0 16px 32px;font-size:13px;color:var(--sub)}
 @media (max-width:520px){th,td{display:block;width:100%;border-top:none}tr{display:block;border-top:1px solid var(--border)}table{border-bottom:none}}
+h1.app{display:flex;align-items:center;gap:14px}
+h1.app img{width:64px;height:64px;border-radius:14px;flex:none}
