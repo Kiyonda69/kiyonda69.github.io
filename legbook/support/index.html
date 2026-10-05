@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support | Legbook</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site"><a href="../">Legbook: Pilot Logbook</a></header>
+<main>
+<section class="panel">
+<h1>Support</h1>
+<p>Legbook is a flight logbook for pilots on iPhone, iPad and Apple Watch. Your logbook stays on your device; there is no account.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:kiyonda69@icloud.com">kiyonda69@icloud.com</a> (English or Japanese)</p>
+<p>Please include the app version (Settings › About), your device and its iOS / iPadOS version, and the steps that lead to the problem. Never send your logbook or backup files unless we ask for a specific problem.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Time zones: are my times in UTC or local time?</h3>
+<p>Times are always <strong>saved in UTC</strong>. In Settings › General › Times shown in, choose UTC or the airports’ local time. In local time, Out and Off are shown in the departure airport’s time and On and In in the arrival airport’s, including daylight saving time on that date. Switching the display never changes your saved times.</p>
+<p>The time zone of an airport comes from the built-in airport table. For an airport that isn’t in it, add its position in Settings › Airport Locations; the time zone is then estimated from the coordinates.</p>
+
+<h3>How is night time calculated?</h3>
+<p>For flights with known airports and times, the app follows the great-circle route between the airports and works out the part of the flight that is in night, as well as whether each takeoff and landing was by day or by night. Choose the definition in Settings › General › Night: civil twilight (the sun more than 6° below the horizon), sunset to sunrise, or one hour after sunset to one hour before sunrise. Values calculated this way are marked “Auto”; type over them to correct them, and they stay as you typed. Nothing is calculated for simulator sessions or when an airport’s position or a time is missing.</p>
+<p>Check that the definition you choose matches the rules of your aviation authority.</p>
+
+<h3>Why isn’t cross-country time filled in automatically?</h3>
+<p>Cross-country definitions differ between authorities (distance, landing at another airport, purpose of the flight …). The app therefore never assumes it: a new flight starts with cross-country 0, and you enter the time that counts for you.</p>
+
+<h3>Can I add my own columns?</h3>
+<p>Yes. In Settings › Custom Fields, add fields of five kinds: time (h:mm, totaled), count (totaled), text, choice, and yes / no. Choice and yes / no fields can filter totals and currency requirements. Hide standard columns you don’t use. Columns such as single-pilot / multi-pilot time or PICUS can be added as time fields, and used as a role when logging.</p>
+
+<h3>How do currency rules work?</h3>
+<p>In the Currency tab, create the requirements you need: a number of days, and what is needed within them — takeoffs, landings (day or night), approaches, hours, or a custom field. Limit a requirement to aircraft types, flags or custom field values if needed. The app shows whether each requirement is met and until when. Add expiry dates (medical, checks, ratings) on the same screen. The app ships no country’s rules: you decide what to track.</p>
+
+<h3>Can I import my logbook from another app or a spreadsheet?</h3>
+<p>Yes. Export your logbook from the other app or spreadsheet as CSV or XLSX (.xlsx), then use Settings › Import from Another Logbook. The app suggests which column goes where (date, airports, times, roles, landings …); check and adjust the mapping, review the result, and import. Durations can be h:mm, decimal hours or minutes. Old .xls files, password-protected files and spreadsheet-app native formats must first be saved as .xlsx or CSV.</p>
+<p>Tip: before a large import, make a backup (below).</p>
+
+<h3>I used the Japanese edition (飛行日誌JP). Can I move my logbook?</h3>
+<p>Yes. In the Japanese edition, export a backup (設定 › バックアップ › 書き出す). In Legbook, open Settings › Import from 飛行日誌JP (Japanese edition) and choose that file. Columns that have no counterpart here become time custom fields with their Japanese names, and times entered in Japan Standard Time are converted to UTC. You can replace all data or add to the current data; a snapshot is taken first.</p>
+
+<h3>How do I back up my logbook?</h3>
+<p>Settings › Backup › Export writes one file with all your data; keep it somewhere safe (for example in the Files app or on a computer). Restore replaces the data with a backup file. The app also keeps automatic snapshots on the device (Settings › Backup) to undo a large change. With iCloud sync on, your data is also kept in your own iCloud — but a sync is not a backup: a deletion is synced too.</p>
+
+<h3>How does iCloud sync work? (Pro)</h3>
+<p>Turn it on in Settings › iCloud Sync on each iPhone and iPad signed in to the same Apple Account. Your data is stored in your own iCloud; the developer can’t see it.</p>
+
+<h3>What is free and what is Pro?</h3>
+<p>The free version records up to 50 flights. Pro is an annual subscription, with a 7-day free trial for new subscribers. It adds unlimited flights, iCloud sync, the widgets, the Apple Watch app and complications, totals by type, category and class, the all-time map and expiry reminders. Without Pro — at the limit or after a subscription ends — you can still view, edit, export and back up all your flights; you just can’t add new ones.</p>
+
+<h3>How do I manage or cancel my subscription?</h3>
+<p>Subscriptions are handled by Apple. On your iPhone or iPad, open Settings › [your name] › Subscriptions, or the App Store › your account picture › Subscriptions. Cancel at least 24 hours before the end of the current period to avoid the next renewal. For a refund, use Apple’s “Report a Problem” (<a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>). To restore Pro on a new device, use Restore Purchases in the app’s Pro screen (Settings › Pro).</p>
+
+<h3>The Apple Watch app shows “Open Legbook on your iPhone”</h3>
+<p>Open the app on the iPhone once while the watch is nearby; the iPhone then sends your data to the watch. The watch app only shows data — flights are entered on the iPhone or iPad.</p>
+
+<h3>Is this an approved logbook?</h3>
+<p>No. Legbook is an unofficial app made independently. It is not affiliated with, approved or endorsed by any civil aviation authority. You are responsible for checking that your records, totals and exported files meet your authority’s requirements, including whether they can serve as a legal logbook.</p>
+
+<h2>Data sources and licenses</h2>
+<ul>
+<li>Map land and coastlines: Made with Natural Earth (public domain).</li>
+<li>Airport positions: OurAirports (public domain).</li>
+<li>Airport time zones: mwgg/Airports (MIT License, Copyright (c) 2014 mwgg) and @photostructure/tz-lookup (CC0 1.0; <a href="https://github.com/photostructure/tz-lookup">github.com/photostructure/tz-lookup</a>).</li>
+<li>Contains information from timezone-boundary-builder (<a href="https://github.com/evansiroky/timezone-boundary-builder">github.com/evansiroky/timezone-boundary-builder</a>), which is made available here under the Open Database License (ODbL) 1.0 (<a href="https://opendatacommons.org/licenses/odbl/1-0/">opendatacommons.org/licenses/odbl/1-0/</a>). © OpenStreetMap contributors (<a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>).</li>
+<li>The table of airport time zones used by the app, derived from the sources above, is available under the ODbL 1.0: <a href="../data/airport-timezones.csv">airport-timezones.csv</a>.</li>
+<li>The full list of open-source software is in the app: Settings › About › Open-source licenses.</li>
+</ul>
+
+<h2>Trademarks</h2>
+<p>Apple, Apple Watch, iCloud, iPad, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+
+<h2>Other pages</h2>
+<ul>
+<li><a href="../privacy/">Privacy Policy</a></li>
+</ul>
+</section>
+</main>
+<footer>© 2026 Kiyoaki Segawa</footer>
+</body>
+</html>
