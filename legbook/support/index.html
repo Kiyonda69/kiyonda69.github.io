@@ -19,6 +19,12 @@
 
 <h2>Frequently asked questions</h2>
 
+<h3>What happens the first time I open the app?</h3>
+<p>On a device with no records, Legbook opens a short setup. Choose how you start: a new logbook, continuing from a paper logbook (you then enter your previous totals), importing from another logbook or a CSV file, restoring a Legbook backup, or syncing from your other devices with iCloud (Pro). The setup then walks through your name and license, how times are shown (UTC or local time) and counted, your default role and your aircraft types; for currency it opens the Currency tab, where you create your own items. Every step can be skipped; if you skip one, “Setup” at the top of Settings lets you finish it later.</p>
+
+<h3>How do I pick a date?</h3>
+<p>Tap the date to open the calendar and tap a day: the calendar closes at once. Changing the month or year in the calendar’s header keeps it open.</p>
+
 <h3>Time zones: are my times in UTC or local time?</h3>
 <p>Times are always <strong>saved in UTC</strong>. In Settings › General › Times shown in, choose UTC or the airports’ local time. In local time, Out and Off are shown in the departure airport’s time and On and In in the arrival airport’s, including daylight saving time on that date. Switching the display never changes your saved times.</p>
 <p>The time zone of an airport comes from the built-in airport table. For an airport that isn’t in it, add its position in Settings › Airport Locations; the time zone is then estimated from the coordinates.</p>
@@ -41,10 +47,10 @@
 <p>Tip: before a large import, make a backup (below).</p>
 
 <h3>I used the Japanese edition (飛行日誌JP). Can I move my logbook?</h3>
-<p>Yes. In the Japanese edition, export a backup (設定 › バックアップ › 書き出す). In Legbook, open Settings › Import from 飛行日誌JP (Japanese edition) and choose that file. Columns that have no counterpart here become time custom fields with their Japanese names, and times entered in Japan Standard Time are converted to UTC. You can replace all data or add to the current data; a snapshot is taken first.</p>
+<p>Legbook can’t read backups of the Japanese edition: Settings › Backup › Restore refuses them and changes nothing. You can bring your flights over as a CSV or XLSX file with Settings › Import from Another Logbook, checking the column mapping before you import.</p>
 
 <h3>How do I back up my logbook?</h3>
-<p>Settings › Backup › Export writes one file with all your data; keep it somewhere safe (for example in the Files app or on a computer). Restore replaces the data with a backup file. The app also keeps automatic snapshots on the device (Settings › Backup) to undo a large change. With iCloud sync on, your data is also kept in your own iCloud — but a sync is not a backup: a deletion is synced too.</p>
+<p>Settings › Backup › Export writes one file with all your data; keep it somewhere safe (for example in the Files app or on a computer). Restore replaces the data with a backup file made by Legbook. The app also keeps automatic snapshots on the device (Settings › Backup) to undo a large change. While iCloud sync is on and working, the app doesn’t remind you to export a backup, because your data is also kept in your own iCloud — but a sync is not a backup: a deletion is synced too, so export a backup now and then.</p>
 
 <h3>How does iCloud sync work? (Pro)</h3>
 <p>Turn it on in Settings › iCloud Sync on each iPhone and iPad signed in to the same Apple Account. Your data is stored in your own iCloud; the developer can’t see it.</p>
