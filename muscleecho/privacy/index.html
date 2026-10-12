@@ -18,16 +18,17 @@
 <ul>
 <li>There is no account. Your workouts, body values and the app’s estimates are stored on your device and, if you turn on iCloud sync, in your own iCloud.</li>
 <li>The app has no advertising, analytics or tracking.</li>
-<li><strong>Only if you turn on the AI advice (Pro)</strong>, a summary of your recent training is sent through MuscleEcho’s relay server to Anthropic, whose AI (Claude) writes the advice. The relay does not keep your workouts. Data from Apple Health is never sent.</li>
+<li><strong>Only when you tap “AI Insights” (Pro)</strong>, a summary of your recent training is sent through MuscleEcho’s relay server to Anthropic, whose AI (Claude) writes the analysis. The relay does not keep your workouts. Data from Apple Health is sent only if you turn on a separate switch for it.</li>
 <li><strong>Only if you use the friends features</strong>, your Game Center scores and a small public “friend card” (no free text, health data or weight) are shared through Apple’s Game Center and iCloud.</li>
 </ul>
 
 <h2>2. Information stored on your device</h2>
 <ul>
-<li>Workouts you log (exercises, sets, weights, repetitions, reps in reserve, durations), templates, the body values you enter (sex, birth year, height, weight, body fat, waist), settings, and the advice you receive are stored on your device in the app’s own database.</li>
+<li>Workouts you log (exercises, sets, weights, repetitions, reps in reserve, durations), templates, the body values you enter (sex, birth year, height, weight, body fat, waist), settings, the training context you enter for AI Insights (goal, equipment, available days and time, things to avoid), workout summaries (duration, heart rate, active calories) and the analyses you receive are stored on your device in the app’s own database.</li>
 <li>Deleting the app deletes the data stored on that device. If you use a device backup (such as iCloud Backup), the app’s data may be included in that backup.</li>
 <li>Files you export (backups) go where you choose; how they are handled there is governed by that destination’s terms.</li>
 <li><strong>Apple Watch and widgets:</strong> your iPhone sends the data they show (for example today’s workout and a body-chart image) directly to your paired Apple Watch, and keeps widget data in a storage area on the device shared only by the app and its widgets. None of this passes through the developer.</li>
+<li><strong>Live Activity:</strong> while a workout is running, the Lock Screen and Dynamic Island show the elapsed time, sets, rest timer and, with an Apple Watch, your current heart rate. It is created on your device.</li>
 </ul>
 
 <h2>3. iCloud sync (optional)</h2>
@@ -38,20 +39,22 @@
 
 <h2>4. Apple Health (optional)</h2>
 <ul>
-<li>With your permission, the app reads workouts, body weight, body fat percentage and lean body mass from Apple Health to keep the model up to date, and writes the strength workouts you log to Apple Health.</li>
-<li>Data read from Apple Health stays on your device. It is not stored in iCloud by the app, not sent to the AI advice, not shared with the developer or any third party, and not used for advertising or marketing.</li>
+<li>With your permission, the app reads workouts, heart rate, active energy, body weight, body fat percentage and lean body mass from Apple Health to keep the model up to date and to show workout summaries.</li>
+<li><strong>Workouts:</strong> when you start a training session, the app can also run a workout session (on iPhone, and on Apple Watch with Pro), so that the workout, its heart rate and active calories are saved to Apple Health and count toward your Activity rings in the Fitness app. The exercises and sets stay in MuscleEcho. You can turn this off in the app’s settings.</li>
+<li>Data from Apple Health stays on your device. It is not stored in iCloud by the app, not shared with the developer, and not used for advertising or marketing. It is sent to AI Insights <strong>only if you turn on the separate “Send heart rate, calories, weight and body fat” switch</strong> (section 5), and then only to improve the analysis of your training.</li>
 <li>You can change these permissions at any time in the Health app or in Settings › Privacy &amp; Security › Health.</li>
 </ul>
 
-<h2>5. AI advice (optional, Pro)</h2>
-<p>The AI advice is off until you turn it on and agree to the explanation shown in the app. When it is on, on each day you log a workout (at most once a day):</p>
+<h2>5. AI Insights (optional, Pro)</h2>
+<p>AI Insights is off until you turn it on and agree to the explanation shown in the app. Nothing is sent automatically: a request is made only when you tap “AI Insights” (at most three times a day).</p>
 <ul>
-<li><strong>What is sent:</strong> your workouts from the last 14 days (exercise names, weights, repetitions, reps in reserve, durations), the body values you entered in the app (sex, age, height, weight, body fat), the app’s estimates for each muscle (change in size, weekly sets, status, recovery), the date and the app’s language. Your name, notes, contact details and any data from Apple Health are not sent.</li>
+<li><strong>What is sent:</strong> your workouts from the last 14 days (exercise names, weights, repetitions, reps in reserve, durations), the body values you entered in the app (sex, age, height, weight, body fat), the training context you entered (goal, equipment, available days and time, and the short note about things to avoid), the app’s estimates for each muscle (change in size, weekly sets, status, recovery), the date and the app’s language. Your name, other notes and contact details are not sent.</li>
+<li><strong>Apple Health data (only with the separate switch, off by default):</strong> for each session in the last 14 days, its duration, average and maximum heart rate and active calories (sessions started in MuscleEcho and workouts read from Apple Health), and your latest body weight and body fat percentage from Apple Health. Detailed heart-rate readings are not sent. You can turn this switch off at any time.</li>
 <li><strong>Proof of Pro:</strong> to confirm that you have Pro, the app also sends Apple’s signed purchase record (StoreKit). It contains purchase identifiers, not your name or payment details.</li>
-<li><strong>Relay server:</strong> the request goes to MuscleEcho’s relay, which runs on Cloudflare Workers (Cloudflare, Inc.). The relay checks the purchase record, forwards the summary to Anthropic and returns the advice. It does not store the summary or the advice. To allow one request per day and to cap the service’s total cost, it keeps only a one-way hash of the purchase identifier with the date (deleted automatically after 3 days) and a monthly total of the cost of all requests. As with any internet service, Cloudflare processes your IP address to deliver the request.</li>
-<li><strong>Anthropic:</strong> Anthropic, PBC processes the summary through its API only to generate your advice, under its commercial terms, which do not allow it to use this data to train its models. Anthropic may keep API data for a limited period for safety and abuse monitoring, as described in its policies (<a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>).</li>
-<li><strong>On your device:</strong> the advice you receive is saved in the app. A local notification tells you when it is ready.</li>
-<li>Turn the advice off at any time in Settings › AI advice; nothing more is sent after that.</li>
+<li><strong>Relay server:</strong> the request goes to MuscleEcho’s relay, which runs on Cloudflare Workers (Cloudflare, Inc.). The relay checks the purchase record, forwards the summary to Anthropic and returns the analysis. It does not store the summary or the analysis. To limit requests to three a day and to cap the service’s total cost, it keeps only a one-way hash of the purchase identifier with the date (deleted automatically after 3 days) and a monthly total of the cost of all requests. As with any internet service, Cloudflare processes your IP address to deliver the request.</li>
+<li><strong>Anthropic:</strong> Anthropic, PBC processes the summary through its API only to generate your analysis, under its commercial terms, which do not allow it to use this data to train its models. Anthropic may keep API data for a limited period for safety and abuse monitoring, as described in its policies (<a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>).</li>
+<li><strong>On your device:</strong> the analysis you receive is saved in the app. If you leave the app while it is being written, a local notification tells you when it is ready.</li>
+<li>Turn AI Insights (or only the Apple Health switch) off at any time in Settings › AI Insights; nothing more is sent after that.</li>
 </ul>
 
 <h2>6. Game Center and friends (optional)</h2>
@@ -63,20 +66,20 @@
 <h2>7. Purchases and subscriptions</h2>
 <ul>
 <li>Purchases and subscriptions (Pro, including any free trial) are processed by Apple through the App Store. The developer does not receive your name, payment details or Apple Account information.</li>
-<li>The app checks whether you have Pro on your device using the App Store’s purchase records (StoreKit). Apart from the proof of Pro sent with the AI advice (section 5), the result is not sent anywhere.</li>
+<li>The app checks whether you have Pro on your device using the App Store’s purchase records (StoreKit). Apart from the proof of Pro sent with AI Insights (section 5), the result is not sent anywhere.</li>
 </ul>
 
 <h2>8. Notifications</h2>
-<p>Notifications (for example that today’s advice is ready) are local notifications created on your device. No push notifications are used. Permission is requested only when you turn on a feature that uses them.</p>
+<p>Notifications (for example that your analysis is ready) are local notifications created on your device. No push notifications are used. Permission is requested only when you turn on a feature that uses them.</p>
 
 <h2>9. Information provided by Apple</h2>
 <p>If you have turned on “Share With App Developers” in your device’s settings, Apple may provide the developer with anonymized usage and crash information. This is done by Apple, not sent by the app, and is governed by Apple’s privacy policy.</p>
 
 <h2>10. Sharing with third parties</h2>
-<p>We do not sell personal information or “share” it as those terms are used in the California Consumer Privacy Act (CCPA / CPRA), and we do not use it for advertising. Information leaves your device only as described above: to Cloudflare and Anthropic as service providers for the AI advice, and to Apple’s services (iCloud, Game Center, App Store, Apple Health) that you choose to use.</p>
+<p>We do not sell personal information or “share” it as those terms are used in the California Consumer Privacy Act (CCPA / CPRA), and we do not use it for advertising. Information leaves your device only as described above: to Cloudflare and Anthropic as service providers for AI Insights, and to Apple’s services (iCloud, Game Center, App Store, Apple Health) that you choose to use.</p>
 
 <h2>11. Your rights (GDPR, UK GDPR, CCPA and similar laws)</h2>
-<p>The legal basis for the AI advice is your consent, which you can withdraw at any time by turning it off. The developer keeps no copy of your workouts or advice: the relay keeps only the short-lived hashed counter described in section 5. Your data stays under your control:</p>
+<p>The legal basis for AI Insights, and for sending Apple Health data to it, is your consent, which you can withdraw at any time by turning it off. The developer keeps no copy of your workouts or analyses: the relay keeps only the short-lived hashed counter described in section 5. Your data stays under your control:</p>
 <ul>
 <li>view, correct and delete records in the app;</li>
 <li>export your data at any time;</li>
@@ -85,7 +88,7 @@
 <p>For requests about data processed by Anthropic or Cloudflare, you can contact us and we will help, or contact them directly. If you contact us by e-mail, we use your message and address only to answer you, and delete them when they are no longer needed for that purpose. You may also lodge a complaint with your local data protection authority.</p>
 
 <h2>12. Children</h2>
-<p>The app is not directed to children under 13 (or the minimum age in your country). The AI advice should not be used by children.</p>
+<p>The app is not directed to children under 13 (or the minimum age in your country). AI Insights should not be used by children.</p>
 
 <h2>13. Security</h2>
 <p>Your data is protected by your device’s security features (passcode, data protection) and, if you use iCloud, by Apple’s iCloud security. Requests to the relay are encrypted (HTTPS), and the Claude API key is kept only on the relay, never in the app.</p>
